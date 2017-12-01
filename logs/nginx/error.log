@@ -1,0 +1,5 @@
+2017/09/21 19:38:37 [emerg] 1#1: no "events" section in configuration
+2017/09/21 19:52:31 [emerg] 1#1: unexpected "}" in /etc/nginx/conf.d/site.conf:26
+2017/09/21 19:59:54 [emerg] 1#1: unexpected "}" in /etc/nginx/conf.d/site.conf:26
+2017/09/21 20:18:14 [emerg] 1#1: unexpected "}" in /etc/nginx/conf.d/site.conf:26
+2017/09/21 20:21:05 [emerg] 1#1: no "events" section in configuration
