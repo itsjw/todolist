@@ -1,0 +1,21 @@
+{
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@symfony/webpack-encore": "^0.17.0",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.2.1",
+    "node-sass": "^4.7.2",
+    "postcss-loader": "^2.0.9",
+    "sass-loader": "^6.0.6"
+  },
+  "dependencies": {
+    "bootstrap": "4.0.0-alpha.6",
+    "parsleyjs": "^2.8.0",
+    "popper.js": "^1.12.9"
+  },
+  "scripts": {
+    "dev": "./node_modules/.bin/encore dev",
+    "watch": "./node_modules/.bin/encore dev --watch",
+    "prod": "./node_modules/.bin/encore production"
+  }
+}

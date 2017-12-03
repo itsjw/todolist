@@ -1,0 +1,51 @@
+{
+  "manifest": {
+    "name": "delegate",
+    "description": "Lightweight event delegation",
+    "version": "3.1.3",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/zenorocha/delegate.git"
+    },
+    "license": "MIT",
+    "main": "src/delegate.js",
+    "keywords": [
+      "event",
+      "delegate",
+      "delegation"
+    ],
+    "devDependencies": {
+      "browserify": "^13.1.0",
+      "chai": "^3.5.0",
+      "karma": "^1.3.0",
+      "karma-browserify": "^5.1.0",
+      "karma-chai": "^0.1.0",
+      "karma-mocha": "^1.2.0",
+      "karma-phantomjs-launcher": "^1.0.2",
+      "karma-sinon": "^1.0.4",
+      "mocha": "^3.1.2",
+      "phantomjs-polyfill": "0.0.2",
+      "simulant": "^0.2.2",
+      "sinon": "^1.17.6"
+    },
+    "scripts": {
+      "build": "browserify src/delegate.js -s delegate -o dist/delegate.js",
+      "test": "karma start --single-run"
+    },
+    "_registry": "npm",
+    "_loc": "/var/www/app/.cache/yarn/v1/npm-delegate-3.1.3-9a8251a777d7025faa55737bc3b071742127a9fd/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# delegate\n\nLightweight event delegation.\n\n## Install\n\nYou can get it on npm.\n\n```\nnpm install delegate --save\n```\n\nOr bower, too.\n\n```\nbower install delegate --save\n```\n\nIf you're not into package management, just [download a ZIP](https://github.com/zenorocha/delegate/archive/master.zip) file.\n\n## Setup\n\n###### Node (Browserify)\n\n```js\nvar delegate = require('delegate');\n```\n\n###### Browser (Standalone)\n\n```html\n<script src=\"dist/delegate.js\"></script>\n```\n\n## Usage\n\n### Add event delegation\n\n```js\ndelegate(document.body, '.btn', 'click', function(e) {\n    console.log(e.delegateTarget);\n}, false);\n```\n\n### Remove event delegation\n\n```js\nvar delegation = delegate('.btn', 'click', function(e) {\n    console.log(e.delegateTarget);\n}, false);\n\ndelegation.destroy();\n```\n\n## Browser Support\n\n| <img src=\"https://clipboardjs.com/assets/images/chrome.png\" width=\"48px\" height=\"48px\" alt=\"Chrome logo\"> | <img src=\"https://clipboardjs.com/assets/images/edge.png\" width=\"48px\" height=\"48px\" alt=\"Edge logo\"> | <img src=\"https://clipboardjs.com/assets/images/firefox.png\" width=\"48px\" height=\"48px\" alt=\"Firefox logo\"> | <img src=\"https://clipboardjs.com/assets/images/ie.png\" width=\"48px\" height=\"48px\" alt=\"Internet Explorer logo\"> | <img src=\"https://clipboardjs.com/assets/images/opera.png\" width=\"48px\" height=\"48px\" alt=\"Opera logo\"> | <img src=\"https://clipboardjs.com/assets/images/safari.png\" width=\"48px\" height=\"48px\" alt=\"Safari logo\"> |\n|:---:|:---:|:---:|:---:|:---:|:---:|\n| Latest ✔ | Latest ✔ | Latest ✔ | 9+ ✔ | Latest ✔ | Latest ✔ |\n\n## License\n\n[MIT License](http://zenorocha.mit-license.org/) © Zeno Rocha\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/delegate/-/delegate-3.1.3.tgz#9a8251a777d7025faa55737bc3b071742127a9fd",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/delegate/-/delegate-3.1.3.tgz",
+    "hash": "9a8251a777d7025faa55737bc3b071742127a9fd",
+    "registry": "npm",
+    "packageName": "delegate"
+  },
+  "registry": "npm",
+  "hash": "9a8251a777d7025faa55737bc3b071742127a9fd"
+}

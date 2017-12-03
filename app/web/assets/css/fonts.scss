@@ -1,0 +1,22 @@
+$fa-font-path: '~font-awesome/fonts';
+@import '~font-awesome/scss/font-awesome.scss';
+
+.fonts {
+  float: left;
+  font-style: normal;
+  font-weight: normal;
+  display: inline-block;
+  text-align: center;
+  height: 20px;
+  width: 20px;
+  line-height: 20px;
+}
+
+[class^="fa-"], [class*=" fa-"] {
+  @extend .fonts;
+  font-family: FontAwesome;
+}
+
+svg {
+  display: none;
+}

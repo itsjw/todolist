@@ -1,0 +1,95 @@
+{
+  "manifest": {
+    "name": "@types/node",
+    "version": "8.0.53",
+    "description": "TypeScript definitions for Node.js",
+    "license": "MIT",
+    "contributors": [
+      {
+        "name": "Microsoft TypeScript",
+        "url": "http://typescriptlang.org"
+      },
+      {
+        "name": "DefinitelyTyped",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped"
+      },
+      {
+        "name": "Parambir Singh",
+        "url": "https://github.com/parambirs"
+      },
+      {
+        "name": "Christian Vaagland Tellnes",
+        "url": "https://github.com/tellnes"
+      },
+      {
+        "name": "Wilco Bakker",
+        "url": "https://github.com/WilcoBakker"
+      },
+      {
+        "name": "Nicolas Voigt",
+        "url": "https://github.com/octo-sniffle"
+      },
+      {
+        "name": "Chigozirim C.",
+        "url": "https://github.com/smac89"
+      },
+      {
+        "name": "Flarna",
+        "url": "https://github.com/Flarna"
+      },
+      {
+        "name": "Mariusz Wiktorczyk",
+        "url": "https://github.com/mwiktorczyk"
+      },
+      {
+        "name": "wwwy3y3",
+        "url": "https://github.com/wwwy3y3"
+      },
+      {
+        "name": "Deividas Bakanas",
+        "url": "https://github.com/DeividasBakanas"
+      },
+      {
+        "name": "Kelvin Jin",
+        "url": "https://github.com/kjin"
+      },
+      {
+        "name": "Alvis HT Tang",
+        "url": "https://github.com/alvis"
+      },
+      {
+        "name": "Oliver Joseph Ash",
+        "url": "https://github.com/OliverJAsh"
+      },
+      {
+        "name": "Sebastian Silbermann",
+        "url": "https://github.com/eps1lon"
+      }
+    ],
+    "main": "",
+    "repository": {
+      "type": "git",
+      "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+    },
+    "scripts": {},
+    "dependencies": {},
+    "typesPublisherContentHash": "7628c177ed2033fe9d4dfbbef0851ddb49397afbd2e4cd6f04aea9b9b4f1996f",
+    "typeScriptVersion": "2.0",
+    "_registry": "npm",
+    "_loc": "/var/www/app/.cache/yarn/v1/npm-@types/node-8.0.53-396b35af826fa66aad472c8cb7b8d5e277f4e6d8/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# Installation\n> `npm install --save @types/node`\n\n# Summary\nThis package contains type definitions for Node.js (http://nodejs.org/).\n\n# Details\nFiles were exported from https://www.github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/node\n\nAdditional Details\n * Last updated: Wed, 15 Nov 2017 23:11:40 GMT\n * Dependencies: events, net, stream, url, child_process, tls, http, readline, dns, crypto, fs\n * Global values: Buffer, NodeJS, SlowBuffer, Symbol, __dirname, __filename, clearImmediate, clearInterval, clearTimeout, console, exports, global, module, process, require, setImmediate, setInterval, setTimeout\n\n# Credits\nThese definitions were written by Microsoft TypeScript <http://typescriptlang.org>, DefinitelyTyped <https://github.com/DefinitelyTyped/DefinitelyTyped>, Parambir Singh <https://github.com/parambirs>, Christian Vaagland Tellnes <https://github.com/tellnes>, Wilco Bakker <https://github.com/WilcoBakker>, Nicolas Voigt <https://github.com/octo-sniffle>, Chigozirim C. <https://github.com/smac89>, Flarna <https://github.com/Flarna>, Mariusz Wiktorczyk <https://github.com/mwiktorczyk>, wwwy3y3 <https://github.com/wwwy3y3>, Deividas Bakanas <https://github.com/DeividasBakanas>, Kelvin Jin <https://github.com/kjin>, Alvis HT Tang <https://github.com/alvis>, Oliver Joseph Ash <https://github.com/OliverJAsh>, Sebastian Silbermann <https://github.com/eps1lon>.\n",
+    "licenseText": "    MIT License\n\n    Copyright (c) Microsoft Corporation. All rights reserved.\n\n    Permission is hereby granted, free of charge, to any person obtaining a copy\n    of this software and associated documentation files (the \"Software\"), to deal\n    in the Software without restriction, including without limitation the rights\n    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n    copies of the Software, and to permit persons to whom the Software is\n    furnished to do so, subject to the following conditions:\n\n    The above copyright notice and this permission notice shall be included in all\n    copies or substantial portions of the Software.\n\n    THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\n    SOFTWARE\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/@types/node/-/node-8.0.53.tgz#396b35af826fa66aad472c8cb7b8d5e277f4e6d8",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/@types/node/-/node-8.0.53.tgz",
+    "hash": "396b35af826fa66aad472c8cb7b8d5e277f4e6d8",
+    "registry": "npm",
+    "packageName": "@types/node"
+  },
+  "registry": "npm",
+  "hash": "396b35af826fa66aad472c8cb7b8d5e277f4e6d8"
+}

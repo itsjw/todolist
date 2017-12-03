@@ -1,0 +1,58 @@
+{
+  "manifest": {
+    "name": "webpack-chunk-hash",
+    "version": "0.5.0",
+    "description": "Plugin to replace a standard webpack chunk hashing with custom (md5) one.",
+    "main": "index.js",
+    "scripts": {
+      "lint": "jshint",
+      "pretest": "rimraf dist",
+      "test": "jasmine-node --captureExceptions spec"
+    },
+    "pre-commit": [
+      "lint",
+      "test"
+    ],
+    "repository": {
+      "type": "git",
+      "url": "git@github.com:alexindigo/webpack-chunk-hash.git"
+    },
+    "keywords": [
+      "webpack",
+      "hash",
+      "plugin",
+      "md5"
+    ],
+    "author": {
+      "name": "Alex Indigo",
+      "email": "iam@alexindigo.com"
+    },
+    "license": "MIT",
+    "dependencies": {
+      "@types/webpack": "^3.0.5"
+    },
+    "devDependencies": {
+      "argparse": "^1.0.4",
+      "jasmine-node": "^1.14.5",
+      "jshint": "^2.8.0",
+      "rimraf": "^2.5.4",
+      "webpack": "^1.13.3"
+    },
+    "_registry": "npm",
+    "_loc": "/var/www/app/.cache/yarn/v1/npm-webpack-chunk-hash-0.5.0-1dba38203d73c1e6ab069b6810a5a37402399dec/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# webpack-chunk-hash\n\nPlugin to replace a standard webpack chunk hashing with custom (md5) one.\n\n_Note: It's a clone of [webpack-md5-hash](https://www.npmjs.com/package/webpack-md5-hash) plugin, but without sorting provided chunks (unobtrusive),\nand using native crypto module (performance)._\n\n## Install\n\n```\nnpm install --save-dev webpack-chunk-hash\n```\n\n## Example\n\nJust add this plugin as usual.\n\n```javascript\n\n// webpack.config.js\n\nvar WebpackChunkHash = require('webpack-chunk-hash');\n\nmodule.exports = {\n  // ...\n  output: {\n    filename: '[name].[chunkhash].js',\n    chunkFilename: '[name].[chunkhash].js',\n  },\n  plugins: [\n    new WebpackChunkHash({algorithm: 'md5'}) // 'md5' is default value\n  ]\n};\n\n```\n\n## Options\n\n```\n// a callback to add more content to the resulting hash\nadditionalHashContent: function(chunk) { return 'your additional content to hash'; } \n// which algorithm to use (https://nodejs.org/api/crypto.html#crypto_crypto_createhash_algorithm)\nalgorithm: 'md5'\n// which digest to use (https://nodejs.org/api/crypto.html#crypto_hash_digest_encoding)\ndigest:    'hex'\n```\n\n## License\n\nWebpackChunkHash plugin is released under the [MIT](License) license.\n",
+    "licenseText": "MIT License\n\nCopyright (c) 2016 Alex Indigo\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/webpack-chunk-hash/-/webpack-chunk-hash-0.5.0.tgz#1dba38203d73c1e6ab069b6810a5a37402399dec",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/webpack-chunk-hash/-/webpack-chunk-hash-0.5.0.tgz",
+    "hash": "1dba38203d73c1e6ab069b6810a5a37402399dec",
+    "registry": "npm",
+    "packageName": "webpack-chunk-hash"
+  },
+  "registry": "npm",
+  "hash": "1dba38203d73c1e6ab069b6810a5a37402399dec"
+}

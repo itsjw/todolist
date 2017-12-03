@@ -1,0 +1,37 @@
+{
+  "manifest": {
+    "name": "style-loader",
+    "version": "0.13.2",
+    "author": {
+      "name": "Tobias Koppers @sokra"
+    },
+    "description": "style loader module for webpack",
+    "devDependencies": {
+      "css-loader": "~0.8.0"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git@github.com:webpack/style-loader.git"
+    },
+    "license": "MIT",
+    "dependencies": {
+      "loader-utils": "^1.0.2"
+    },
+    "_registry": "npm",
+    "_loc": "/var/www/app/.cache/yarn/v1/npm-style-loader-0.13.2-74533384cf698c7104c7951150b49717adc2f3bb/package.json",
+    "readmeFilename": "README.md",
+    "readme": "[![npm][npm]][npm-url]\n[![node][node]][node-url]\n[![deps][deps]][deps-url]\n[![chat][chat]][chat-url]\n\n<div align=\"center\">\n  <a href=\"https://github.com/webpack/webpack\">\n    <img width=\"200\" height=\"200\"\n      src=\"https://webpack.js.org/assets/icon-square-big.svg\">\n  </a>\n  <h1>Style Loader</h1>\n</div>\n\nAdds CSS to the DOM by injecting a `<style>` tag\n\n<h2 align=\"center\">Install</h2>\n\n```\nnpm install style-loader --save-dev\n```\n\n<h2 align=\"center\">Usage</h2>\n\n[Documentation: Using loaders](http://webpack.github.io/docs/using-loaders.html)\n\n### Simple API\n\n``` javascript\nrequire(\"style-loader!raw-loader!./file.css\");\n// => add rules in file.css to document\n```\n\nIt's recommended to combine it with the [`css-loader`](https://github.com/webpack/css-loader): `require(\"style-loader!css-loader!./file.css\")`.\n\nIt's also possible to add a URL instead of a CSS string:\n\n``` javascript\nrequire(\"style-loader/url!file-loader!./file.css\");\n// => add a <link rel=\"stylesheet\"> to file.css to document\n```\n\n### Local scope CSS\n\n(experimental)\n\nWhen using [local scope CSS](https://github.com/webpack/css-loader#css-scope) the module exports the generated identifiers:\n\n``` javascript\nvar style = require(\"style-loader!css-loader!./file.css\");\nstyle.placeholder1 === \"z849f98ca812bc0d099a43e0f90184\"\n```\n\n### Reference-counted API\n\n``` javascript\nvar style = require(\"style-loader/useable!css-loader!./file.css\");\nstyle.use(); // = style.ref();\nstyle.unuse(); // = style.unref();\n```\n\nStyles are not added on `require`, but instead on call to `use`/`ref`. Styles are removed from page if `unuse`/`unref` is called exactly as often as `use`/`ref`.\n\nNote: Behavior is undefined when `unuse`/`unref` is called more often than `use`/`ref`. Don't do that.\n\n### Options\n\n#### `insertAt`\n\nBy default, the style-loader appends `<style>` elements to the end of the `<head>` tag of the page. This will cause CSS created by the loader to take priority over CSS already present in the document head. To insert style elements at the beginning of the head, set this query parameter to 'top', e.g. `require('../style.css?insertAt=top')`.\n\n#### `singleton`\n\nIf defined, the style-loader will re-use a single `<style>` element, instead of adding/removing individual elements for each required module. **Note:** this option is on by default in IE9, which has strict limitations on the number of style tags allowed on a page. You can enable or disable it with the singleton query parameter (`?singleton` or `?-singleton`).\n\n### Recommended configuration\n\nBy convention the reference-counted API should be bound to `.useable.css` and the simple API to `.css` (similar to other file types, i.e. `.useable.less` and `.less`).\n\nSo the recommended configuration for webpack is:\n\n``` javascript\n{\n  module: {\n    rules: [\n      {\n        test: /\\.css$/,\n        use: [\n          { loader: \"style-loader\" },\n          { loader: \"css-loader\" },\n        ],\n      },\n      {\n        test: /\\.useable\\.css$/,\n        use: [\n          { \n            loader: \"style-loader\",\n            options: {\n              useable: true\n            },\n          },\n          { loader: \"css-loader\" },\n        ],\n      },\n    ],\n  },\n}\n```\n\n**Note** about source maps support and assets referenced with `url`: when style loader is used with ?sourceMap option, the CSS modules will be generated as `Blob`s, so relative paths don't work (they would be relative to `chrome:blob` or `chrome:devtools`). In order for assets to maintain correct paths setting `output.publicPath` property of webpack configuration must be set, so that absolute paths are generated.\n\n<h2 align=\"center\">Contributing</h2>\n\nDon't hesitate to create a pull request. Every contribution is appreciated. In development you can start the tests by calling `npm test`.\n\n<h2 align=\"center\">Maintainers</h2>\n\n<table>\n  <tbody>\n    <tr>\n      <td align=\"center\">\n        <img width=\"150 height=\"150\"\n        src=\"https://avatars.githubusercontent.com/sokra?v=3\">\n        <br />\n        <a href=\"https://github.com/\">Tobias Koppers</a>\n      </td>\n      <td align=\"center\">\n        <img width=\"150 height=\"150\"\n        src=\"https://avatars.githubusercontent.com/SpaceK33z?v=3\">\n        <br />\n        <a href=\"https://github.com/\">Kees Kluskens</a>\n      </td>\n    <tr>\n  <tbody>\n</table>\n\n\n<h2 align=\"center\">LICENSE</h2>\n\nMIT\n\n[npm]: https://img.shields.io/npm/v/style-loader.svg\n[npm-url]: https://npmjs.com/package/style-loader\n\n[node]: https://img.shields.io/node/v/style-loader.svg\n[node-url]: https://nodejs.org\n\n[deps]: https://david-dm.org/webpack/style-loader.svg\n[deps-url]: https://david-dm.org/webpack/file-loader\n\n[chat]: https://badges.gitter.im/webpack/webpack.svg\n[chat-url]: https://gitter.im/webpack/webpack\n",
+    "licenseText": "Copyright JS Foundation and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n'Software'), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/style-loader/-/style-loader-0.13.2.tgz#74533384cf698c7104c7951150b49717adc2f3bb",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/style-loader/-/style-loader-0.13.2.tgz",
+    "hash": "74533384cf698c7104c7951150b49717adc2f3bb",
+    "registry": "npm",
+    "packageName": "style-loader"
+  },
+  "registry": "npm",
+  "hash": "74533384cf698c7104c7951150b49717adc2f3bb"
+}

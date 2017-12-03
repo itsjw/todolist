@@ -1,0 +1,46 @@
+{
+  "manifest": {
+    "name": "killable",
+    "version": "1.0.0",
+    "description": "Keeps track of a server's open sockets so they can be destroyed at a moment's notice.",
+    "main": "index.js",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/marten-de-vries/killable.git"
+    },
+    "keywords": [
+      "express",
+      "http",
+      "server",
+      "socket",
+      "kill",
+      "truncate",
+      "destroy",
+      "restart",
+      "shutdown",
+      "immeadiately"
+    ],
+    "author": {
+      "name": "Marten de Vries"
+    },
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/marten-de-vries/killable/issues"
+    },
+    "_registry": "npm",
+    "_loc": "/var/www/app/.cache/yarn/v1/npm-killable-1.0.0-da8b84bd47de5395878f95d64d02f2449fe05e6b/package.json",
+    "readmeFilename": "README.md",
+    "readme": "killable\n========\n\nKeeps track of a server's open sockets so they can be destroyed at a\nmoment's notice. This way, the server connection can be killed very\nfast.\n\nInstallation\n------------\n\n```\nnpm install killable\n```\n\nExample usage\n-------------\n\nUsing express:\n('server' in the example is just an ``http.server``, so other frameworks\nor pure Node should work just as well.)\n\n```javascript\nvar killable = require('killable');\n\nvar app = require('express')();\nvar server;\n\napp.route('/', function (req, res, next) {\n  res.send('Server is going down NOW!');\n\n  server.kill(function () {\n    //the server is down when this is called. That won't take long.\n  });\n});\n\nvar server = app.listen(8080);\nkillable(server);\n```\n\nAPI\n---\n\nThe ``killable`` module is callable. When you call it on a Node\n``http.Server`` object, it will add a ``server.kill()`` method on it. It\nreturns the server object.\n\n``server.kill([callback])`` closes all open sockets and calls\n``server.close()``, to which the ``callback`` is passed on.\n\nInspired by: http://stackoverflow.com/a/14636625\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/killable/-/killable-1.0.0.tgz#da8b84bd47de5395878f95d64d02f2449fe05e6b",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/killable/-/killable-1.0.0.tgz",
+    "hash": "da8b84bd47de5395878f95d64d02f2449fe05e6b",
+    "registry": "npm",
+    "packageName": "killable"
+  },
+  "registry": "npm",
+  "hash": "da8b84bd47de5395878f95d64d02f2449fe05e6b"
+}

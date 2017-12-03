@@ -1,0 +1,71 @@
+{
+  "manifest": {
+    "name": "@types/webpack",
+    "version": "3.8.1",
+    "description": "TypeScript definitions for webpack",
+    "license": "MIT",
+    "contributors": [
+      {
+        "name": "Qubo",
+        "url": "https://github.com/tkqubo"
+      },
+      {
+        "name": "Benjamin Lim",
+        "url": "https://github.com/bumbleblym"
+      },
+      {
+        "name": "Boris Cherny",
+        "url": "https://github.com/bcherny"
+      },
+      {
+        "name": "Tommy Troy Lin",
+        "url": "https://github.com/tommytroylin"
+      },
+      {
+        "name": "Mohsen Azimi",
+        "url": "https://github.com/mohsen1"
+      },
+      {
+        "name": "Jonathan Creamer",
+        "url": "https://github.com/jcreamer898"
+      },
+      {
+        "name": "Ahmed T. Ali",
+        "url": "https://github.com/ahmed-taj"
+      },
+      {
+        "name": "Alan Agius",
+        "url": "https://github.com/alan-agius4"
+      }
+    ],
+    "main": "",
+    "repository": {
+      "type": "git",
+      "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+    },
+    "scripts": {},
+    "dependencies": {
+      "@types/tapable": "*",
+      "@types/uglify-js": "*",
+      "@types/node": "*"
+    },
+    "typesPublisherContentHash": "0552598e4cbc8fa998201a0f5c30ef44fb96a2545fcaf23b84b110a24d1d32cd",
+    "typeScriptVersion": "2.0",
+    "_registry": "npm",
+    "_loc": "/var/www/app/.cache/yarn/v1/npm-@types/webpack-3.8.1-20c11ea43f1ea7bb09eee4d6d633d830653e5a55/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# Installation\n> `npm install --save @types/webpack`\n\n# Summary\nThis package contains type definitions for webpack (https://github.com/webpack/webpack).\n\n# Details\nFiles were exported from https://www.github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/webpack\n\nAdditional Details\n * Last updated: Thu, 09 Nov 2017 15:19:58 GMT\n * Dependencies: tapable, uglify-js, node\n * Global values: none\n\n# Credits\nThese definitions were written by Qubo <https://github.com/tkqubo>, Benjamin Lim <https://github.com/bumbleblym>, Boris Cherny <https://github.com/bcherny>, Tommy Troy Lin <https://github.com/tommytroylin>, Mohsen Azimi <https://github.com/mohsen1>, Jonathan Creamer <https://github.com/jcreamer898>, Ahmed T. Ali <https://github.com/ahmed-taj>, Alan Agius <https://github.com/alan-agius4>.\n",
+    "licenseText": "    MIT License\n\n    Copyright (c) Microsoft Corporation. All rights reserved.\n\n    Permission is hereby granted, free of charge, to any person obtaining a copy\n    of this software and associated documentation files (the \"Software\"), to deal\n    in the Software without restriction, including without limitation the rights\n    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n    copies of the Software, and to permit persons to whom the Software is\n    furnished to do so, subject to the following conditions:\n\n    The above copyright notice and this permission notice shall be included in all\n    copies or substantial portions of the Software.\n\n    THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\n    SOFTWARE\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/@types/webpack/-/webpack-3.8.1.tgz#20c11ea43f1ea7bb09eee4d6d633d830653e5a55",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/@types/webpack/-/webpack-3.8.1.tgz",
+    "hash": "20c11ea43f1ea7bb09eee4d6d633d830653e5a55",
+    "registry": "npm",
+    "packageName": "@types/webpack"
+  },
+  "registry": "npm",
+  "hash": "20c11ea43f1ea7bb09eee4d6d633d830653e5a55"
+}

@@ -1,0 +1,42 @@
+{
+  "manifest": {
+    "name": "detect-node",
+    "version": "2.0.3",
+    "description": "Detect Node.JS (as opposite to browser environment) (reliable)",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/iliakan/detect-node"
+    },
+    "keywords": [
+      "detect",
+      "node"
+    ],
+    "author": {
+      "name": "Ilya Kantor"
+    },
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/iliakan/detect-node/issues"
+    },
+    "homepage": "https://github.com/iliakan/detect-node",
+    "_registry": "npm",
+    "_loc": "/var/www/app/.cache/yarn/v1/npm-detect-node-2.0.3-a2033c09cc8e158d37748fbde7507832bd6ce127/package.json",
+    "readmeFilename": "Readme.md",
+    "readme": "Usage:\n```js\nvar isNode = require('detect-node');\n\nif (isNode) {\n  console.log(\"Running under Node.JS\");\n} else {\n  alert(\"Hello from browser (or whatever not-a-node env)\");\n}\n```\n\nThe check is performed as:\n```js\nmodule.exports = false;\n\n// Only Node.JS has a process variable that is of [[Class]] process\ntry {\n module.exports = Object.prototype.toString.call(global.process) === '[object process]' \n} catch(e) {}\n\n```\n\nThanks to Ingvar Stepanyan for the initial idea. This check is both **the most reliable I could find** and it does not use `process` env directly, which would cause browserify to include it into the build.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/detect-node/-/detect-node-2.0.3.tgz#a2033c09cc8e158d37748fbde7507832bd6ce127",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/detect-node/-/detect-node-2.0.3.tgz",
+    "hash": "a2033c09cc8e158d37748fbde7507832bd6ce127",
+    "registry": "npm",
+    "packageName": "detect-node"
+  },
+  "registry": "npm",
+  "hash": "a2033c09cc8e158d37748fbde7507832bd6ce127"
+}

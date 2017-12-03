@@ -1,0 +1,59 @@
+{
+  "manifest": {
+    "name": "invariant",
+    "version": "2.2.2",
+    "description": "invariant",
+    "keywords": [
+      "test",
+      "invariant"
+    ],
+    "license": "BSD-3-Clause",
+    "author": {
+      "name": "Andres Suarez",
+      "email": "zertosh@gmail.com"
+    },
+    "files": [
+      "browser.js",
+      "invariant.js",
+      "invariant.js.flow"
+    ],
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/zertosh/invariant"
+    },
+    "scripts": {
+      "test": "NODE_ENV=production tap test/*.js && NODE_ENV=development tap test/*.js"
+    },
+    "dependencies": {
+      "loose-envify": "^1.0.0"
+    },
+    "devDependencies": {
+      "browserify": "^11.0.1",
+      "flow-bin": "^0.35.0",
+      "tap": "^1.4.0"
+    },
+    "main": "invariant.js",
+    "browser": "browser.js",
+    "browserify": {
+      "transform": [
+        "loose-envify"
+      ]
+    },
+    "_registry": "npm",
+    "_loc": "/var/www/app/.cache/yarn/v1/npm-invariant-2.2.2-9e1f56ac0acdb6bf303306f338be3b204ae60360/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# invariant\n\n[![Build Status](https://travis-ci.org/zertosh/invariant.svg?branch=master)](https://travis-ci.org/zertosh/invariant)\n\nA mirror of Facebook's `invariant` (e.g. [React](https://github.com/facebook/react/blob/v0.13.3/src/vendor/core/invariant.js), [flux](https://github.com/facebook/flux/blob/2.0.2/src/invariant.js)).\n\nA way to provide descriptive errors in development but generic errors in production.\n\n## Install\n\nWith [npm](http://npmjs.org) do:\n\n```sh\nnpm install invariant\n```\n\n## `invariant(condition, message)`\n\n```js\nvar invariant = require('invariant');\n\ninvariant(someTruthyVal, 'This will not throw');\n// No errors\n\ninvariant(someFalseyVal, 'This will throw an error with this message');\n// Error: Invariant Violation: This will throw an error with this message\n```\n\n**Note:** When `process.env.NODE_ENV` is not `production`, the message is required. If omitted, `invariant` will throw regardless of the truthiness of the condition. When `process.env.NODE_ENV` is `production`, the message is optional – so they can be minified away.\n\n### Browser\n\nWhen used with [browserify](https://github.com/substack/node-browserify), it'll use `browser.js` (instead of `invariant.js`) and the [envify](https://github.com/hughsk/envify) transform will inline the value of `process.env.NODE_ENV`.\n\n### Node\n\nThe node version is optimized around the performance implications of accessing `process.env`. The value of `process.env.NODE_ENV` is cached, and repeatedly used instead of reading `proces.env`. See [Server rendering is slower with npm react #812](https://github.com/facebook/react/issues/812)\n",
+    "licenseText": "Copyright (c) 2016, Andres Suarez\nAll rights reserved.\n\nRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions are met:\n\n* Redistributions of source code must retain the above copyright notice, this\n  list of conditions and the following disclaimer.\n\n* Redistributions in binary form must reproduce the above copyright notice,\n  this list of conditions and the following disclaimer in the documentation\n  and/or other materials provided with the distribution.\n\n* Neither the name of invariant nor the names of its\n  contributors may be used to endorse or promote products derived from\n  this software without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\"\nAND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\nIMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE\nFOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\nDAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR\nSERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER\nCAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,\nOR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\nOF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/invariant/-/invariant-2.2.2.tgz#9e1f56ac0acdb6bf303306f338be3b204ae60360",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/invariant/-/invariant-2.2.2.tgz",
+    "hash": "9e1f56ac0acdb6bf303306f338be3b204ae60360",
+    "registry": "npm",
+    "packageName": "invariant"
+  },
+  "registry": "npm",
+  "hash": "9e1f56ac0acdb6bf303306f338be3b204ae60360"
+}
