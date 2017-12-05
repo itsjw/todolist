@@ -1,0 +1,401 @@
+/*if you enabled auto complete in forms*/
+.mwd:-webkit-autofill,
+.mwd:-webkit-autofill:hover,
+.mwd:-webkit-autofill:focus,
+.mwd:-webkit-autofill:active {
+	border: 0;
+  -webkit-text-fill-color: #000000;
+  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/*element wrapper*/
+.mwd_element_wrapper {
+	border: 2px solid #cccccc;
+	background-color: #ffffff;
+	border-radius: 5px;
+	font: bold 11px arial;
+	width: 100%;
+	height: 20px;
+}
+.mwd_element_wrapper.mwd_hover {
+	background-color: #eeeeee;
+}
+.mwd_element_wrapper.mwd_focus {
+	background-color: #ffffff;
+	border-color: #ff9900;
+}
+
+
+/*element*/
+.mwd_wrapper { }
+.mwd_element_wrapper .mwd {
+	font: bold 11px arial;
+	padding: 0 3px;
+	width: 90%;
+	line-height: 20px;
+	border-radius: 5px;
+}
+
+.mwd_wrapper_button .mwd {
+	padding: 0;
+	width: 100%;
+}
+.mwd_wrapper_submit .mwd {
+	padding: 0;
+	width: 100%;
+}
+
+/*readonly*/
+.mwd_readonly {
+	background-color: #eeeeee;
+}
+
+
+/*disabled*/
+.mwd_disabled {
+	background-color: #d3d3d3;
+}
+.mwd_disabled .mwd {
+	color: #666666;
+}
+
+
+/*placeholder*/
+.mwd_placeholder {
+	color: #666666;
+	padding: 0 0 0 3px;
+	line-height: 20px;
+}
+
+
+/*info box on validation /images can of course be replaced with you own*/
+.mwd_info {
+	xxheight: 20px;
+	right: -25px;
+}
+.mwd_info.mwd_error_title {
+	right: 0;
+}
+.mwd_info.mwd_error_html {
+	left: 175px;
+	padding: 0 0 0 22px;
+	color: #ffffff;
+	width: auto;
+	font-style: italic;
+}
+.mwd_info.mwd_info_error {
+	color: #ff9900;
+}
+.mwd_info.mwd_info_help {}
+.mwd_info.mwd_info_oke {}
+
+/*info box on validation /images can of course be replaced with you own*/
+/*.mwd_info {
+	height: 20px;
+	line-height: 20px;
+	left: 150px;
+	color: #ffffff;
+	font-size: 11px;
+	font-style: italic;
+}
+.mwd_info.mwd_info_help {}
+.mwd_info.mwd_info_error {
+	color: #ff9900;
+}
+.mwd_info.mwd_info_error_init {}
+.mwd_info.mwd_info_oke {}
+.mwd_info.iconTitle {}
+.mwd_info.iconHtml {
+	padding: 0 0 0 25px;
+}*/
+
+
+/*list
+list is used for attribute list and selectboxes
+the settings for ui-autocomplete-input are of influence of the position of the list itself
+*/
+.mwd.ui-autocomplete-input {
+	margin: 0 0 0 -2px;
+	width: 100%;
+	padding: 0 0 1px 5px;
+}
+.mwd_select_list {
+	border: 2px solid #ff9900;
+	border-radius: 5px;
+	max-height: 150px;
+	background: #ffffff;
+	overflow-x: hidden;
+	overflow-y: auto;
+	z-index: 1000000000;
+}
+.mwd_select_list .mwd_item {
+	display: block;
+	xheight: 20px;
+	xline-height: 21px;
+	margin: 0;
+	padding: 3px;
+	border: 0;
+	color: #000000;
+	background-color: #ffffff;
+	font: bold 11px arial;
+	cursor: pointer;
+	overflow: hidden;
+}
+.mwd_select_list .mwd_item.selected {
+	background: #999999;
+	color: #ffffff;
+}
+.mwd_select_list .mwd_item:hover, .mwd_select_list .mwd_item.ui-menu-item:hover, .mwd_select_list .mwd_item.ui-state-focus {
+	background: #dddddd;
+	color: #000000;
+}
+.mwd_select_list .mwd_item.selected:hover, .mwd_select_list .mwd_item.selected.ui-menu-item:hover, .mwd_select_list .mwd_item.selected.ui-state-focus {
+	background: #999999;
+	color: #ffffff;
+}
+
+
+/*typespecific password */
+.mwd_wrapper_password .mwd {
+	letter-spacing: 3px;
+}
+
+
+/*typespecific checkbox */
+.mwd_wrapper_checkbox {
+	width: 20px;
+	border: 1px dotted #cccccc;
+	background-color: transparent;
+}
+.mwd_wrapper_checkbox.mwd_hover {
+	border-color: #eeeeee;
+	background-color: transparent;
+}
+.mwd_wrapper_checkbox.mwd_focus {
+	border-color: #ff9900;
+	background-color: transparent;
+}
+.mwd_wrapper_checkbox .mwd_info {
+	left: 28px; top: 1px;
+}
+
+
+/*typespecific radio */
+.mwd_wrapper_radio {
+	width: 21px;
+	border: 1px dotted #cccccc;
+	background-color: transparent;
+}
+.mwd_wrapper_radio.mwd_hover {
+	border-color: #eeeeee;
+	background-color: transparent;
+}
+.mwd_wrapper_radio.mwd_focus {
+	border-color: #ff9900;
+	background-color: transparent;
+}
+.mwd_wrapper_radio .mwd_info {
+	left: 28px; top: 1px;
+}
+
+
+/*typespecific input file */
+.mwd_wrapper_file {
+	xwidth: 300px;
+}
+.mwd_wrapper_file .mwd {
+	padding: 0;
+	width: 100%;
+}
+.mwd_file_btn {
+	margin: 1px 1px 0 0;
+	border: 1px solid #cccccc;
+	width: 80px;
+	border-radius: 2px;
+	color: #666666;
+	height: 16px;
+	line-height: 16px;
+	text-align: center;
+	font-size: 10px;
+}
+.mwd_file_cancel {
+	right: 84px;
+	margin: 1px 1px 0 0;
+	border: 1px solid #cccccc;
+	width: 20px;
+	border-radius: 2px;
+	height: 16px;
+	background: url(images/clear.png) center no-repeat;
+}
+.mwd_wrapper_file .mwd_placeholder {
+	max-width: 80%;
+	width: auto;
+	overflow: hidden;
+}
+.mwd_wrapper_file .mwd_info {
+	right: 85px;
+}
+
+
+/*typespecific textarea */
+.mwd_wrapper_textarea {
+	height: 80px;
+	min-height: 80px;
+}
+.mwd_wrapper_textarea .mwd {
+	width: 100%;
+	padding: 3px 10px 10px 5px;
+}
+.mwd_wrapper_textarea .mwd_info {
+	height: 20px;
+}
+
+/*typespecific select */
+.mwd_select_btn {
+	min-width: 16px;
+	border-left: 1px solid #cccccc;
+}
+.mwd_select_list .mwd_group_label {
+	margin: 5px 0 0 0;
+	padding: 3px;
+	border: 0;
+	color: #666666;
+	background-color: #ffffff;
+	font: bold italic 11px arial;
+	cursor: pointer;
+	overflow: hidden;
+}
+.mwd_select_list .mwd_group {
+	padding: 3px 0 3px 10px;
+}
+.mwd_select_list .mwd_group_label_end {
+	height: 5px;
+}
+
+/*typespecific input select *//*
+.mwd_info.iconHtml {
+	padding: 0 0 0 25px;
+	line-height: 22px;
+	margin: 0 0 0 150px;
+	padding: 0 0 0 30px;
+	font-size: 10px;
+	font-weight: bold;
+	font-style: italic;
+	background-position: left center;
+	width: auto;
+}*/
+
+/*typespecific date elements*/
+#ui-datepicker-div.mwd_form_element {
+	margin: 3px 0 0 -2px;
+	border: 2px solid #ff9900;
+}
+
+
+/*typespecific number*/
+.mwd_wrapper_number .ui-spinner input {
+	color: #000000;
+}
+.mwd_wrapper_number .ui-spinner a.ui-state-hover {
+	border-color: #999999;
+}
+.mwd_wrapper_number .ui-spinner a.ui-state-focus {
+	border-color: #999999;
+}
+.mwd_wrapper_number.mwd_readonly .ui-state-disabled, .mwd_wrapper_number.mwd_disabled .ui-state-disabled {
+	opacity: 1;
+}
+
+
+	/*//outline: 0 none !important;
+	outline-color: transparent !important;
+	outline-style: none !important;
+
+/*typespecific range*/
+.mwd_element_wrapper.mwd_wrapper_range {
+	background: transparent;
+}
+.mwd_wrapper_range .mwd {
+	color: #ffffff;
+	width: 25px;
+	margin: 0 0 0 5px;
+	display: none;
+}
+.mwd_wrapper_range .ui-slider {
+	height: 5px;  top: 6px; width: 154px; margin-left: 7px;
+}
+.mwd_wrapper_range .ui-slider .ui-slider-handle {
+	width: 10px; top: -6px; margin: 0 0 0 -6px;
+}
+.mwd_wrapper_range .ui-slider .ui-slider-handle.ui-state-focus {
+	outline: 0 none;
+}
+.mwd_wrapper_range.mwd_disabled .ui-slider {
+	opacity: 1;
+	background-color: #bebebe;
+}
+.mwd_wrapper_range.mwd_disabled .ui-slider .ui-slider-handle {
+	opacity: 0.8;
+}
+.mwd_wrapper_range.mwd_disabled .mwd {
+	color: #999999;
+}
+.mwd_wrapper_range.mwd_readonly .ui-slider {
+	opacity: 1;
+	background-color: #bebebe;
+}
+.mwd_wrapper_range.mwd_readonly .ui-slider .ui-slider-handle {
+	opacity: 0.8;
+}
+
+/*typespecific meter*/
+.mwd_wrapper_meter .mwd_placeholder { xdisplay: none; xcolor: #000000; }
+.mwd_wrapper_meter .mwd_meter { background: transparent; border: 1px solid transparent; }
+.mwd_wrapper_meter .ui-progressbar-value { background: #ff9900; border: 0; }
+
+
+.xmwd_wrapper_meter.mwd_low .ui-progressbar-value {
+	background: #008040;
+}
+.xmwd_wrapper_meter.mwd_high .ui-progressbar-value {
+	background: #FF4040;
+}
+
+/*typespecific progress*/
+.mwd_wrapper_progress .mwd_placeholder { xdisplay: none; xcolor: #000000; }
+.mwd_wrapper_progress .mwd_progress { background: transparent; border: 1px solid transparent; }
+.mwd_wrapper_progress .ui-progressbar-value { background: #ff9900; border: 0; }
+
+/*typespecific output*/
+.mwd_wrapper_output  {
+	width: 50px;
+}
+
+
+/*typespecific color*/
+.mwd_wrapper_color .sp-replacer {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background: transparent;
+}
+.mwd_wrapper_color .sp-preview {
+    width: 163px;
+    height: 10px;
+   	padding: 0;
+   	margin: 5px 0 0 3px;
+   	border: 0;
+}
+.mwd_wrapper_color .sp-dd {
+    display: none;
+}
+
+.mwd_wrapper_search .mwd_info {
+	background: url(images/search.png) no-repeat center;
+	width: 20px;
+	right: 0;
+}
+

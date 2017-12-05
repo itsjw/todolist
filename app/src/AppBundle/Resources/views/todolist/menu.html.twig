@@ -1,0 +1,27 @@
+<nav id="nav_sm" class="nav nav-tabs fixed-top">
+
+    <a class="menu sm nav-item nav-link"
+       data-menu="todolist-overview"
+       data-url="{{ url('base_todolist_category', {'tab': 'overview', 'category': null}) }}"
+       href=""
+       title="overzicht"
+       role="tab"><i class="fa fa-list"></i></a>
+
+    {% for category in categories %}
+        {% set id = category.id %}
+        {% set name = category.name %}
+        <a class="menu sm nav-item nav-link"
+           data-menu="todolist-category-{{ id }}"
+           data-url="{{ url('base_todolist_category', {'tab': 'category', 'category': id}) }}"
+           href=""
+           role="tab"><i class="fa fa-tag"></i> {{ name }}</a>
+    {% endfor %}
+
+    <a class="menu sm nav-item nav-link"
+       data-menu="todolist-categories"
+       data-url="{{ url('base_todolist_categories') }}"
+       href=""
+       title="categorieën"
+       role="tab"><i class="fa fa-tags"></i></a>
+
+</nav>

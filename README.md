@@ -17,14 +17,19 @@ Install docker and docker-compose if not already there.
 
 Cd to dir todolist and run it: `docker-compose up`.
 
+Open a second terminal
 Activate app environment: `docker exec -i -t todolist.php /bin/bash`
 From here you have access to yarn, composer/npm, php bin commands.
 Installed commands for compiling (package.json):
-- `yarn run dev` -> run this at least to compile all assets
+- `yarn run dev`
 - `yarn run watch`
-- `yarn run prod`
+- `yarn run prod` \
 
-Browser url: http://127.0.0.1:8084/
+The first time your run the app do: 
+- `php bin/console cache:clear`
+- `yarn run dev`
+
+To see the app running; go to browser url: http://127.0.0.1:8084/
 
 **Important note** \
 Be aware of the fact that almost all .gitignore files are renamed to .gitignore-orig.

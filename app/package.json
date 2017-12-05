@@ -9,7 +9,9 @@
     "sass-loader": "^6.0.6"
   },
   "dependencies": {
-    "bootstrap": "4.0.0-alpha.6",
+    "bootstrap": "4.0.0-beta",
+    "bootstrap4-datetimepicker": "^5.2.3",
+    "moment": "^2.19.3",
     "parsleyjs": "^2.8.0",
     "popper.js": "^1.12.9"
   },

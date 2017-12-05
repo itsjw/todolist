@@ -1,0 +1,40 @@
+//region font imports
+$fa-font-path: '~font-awesome/fonts';
+@import '~font-awesome/scss/font-awesome.scss';
+
+//@import './entypo-master/font/entypo.css';
+
+@import '../fonts/MaterialDesign-Webfont/css/materialdesignicons.css';
+
+//@import './animate.css';
+
+.fonts {
+  float: left;
+  font-style: normal;
+  font-weight: normal;
+  display: inline-block;
+  text-align: center;
+  height: 20px;
+  width: 20px;
+  line-height: 20px;
+}
+
+//
+//[class^="entypo-"], [class*=" entypo-"] {
+//  @extend .fonts;
+//  margin-right: .1em;
+//}
+//
+[class^="fa-"], [class*=" fa-"] {
+  @extend .fonts;
+  font-family: FontAwesome;
+}
+
+[class^="mdi-"], [class*=" mdi-"] {
+  @extend .fonts;
+  margin-right: .1em;
+}
+
+svg {
+  display: none;
+}

@@ -1,0 +1,57 @@
+//colors
+$dark-brown: #382e1c;
+$mwd-orange: #ff9900;
+$white: #ffffff;
+$black: #000000;
+
+$grey-50: #fafafa;
+$grey-100: #f5f5f5;
+$grey-200: #eee;
+$grey-300: #e0e0e0;
+$grey-400: #bdbdbd;
+$grey-500: #9e9e9e;
+$grey-600: #757575;
+$grey-700: #616161;
+$grey-800: #424242;
+$grey-900: #212121;
+$grey-a100: #f5f5f5;
+$grey-a200: #eee;
+$grey-a400: #bdbdbd;
+$grey-a700: #616161;
+$grey: $grey-500;
+
+$theme-colors: (
+        primary: $mwd-orange,
+        secondary: $mwd-orange, //$gray-600,
+        success: $mwd-orange, //$green,
+        info: $mwd-orange, //$cyan,
+        warning: $mwd-orange, //$yellow,
+        danger: $mwd-orange, //$red,
+        light: $mwd-orange, //$gray-100,
+        dark: $mwd-orange, //$gray-800
+);
+
+//body
+$body-bg: $dark-brown;
+$body-color: $white;
+$font-size-base: 0.8rem;
+$link-color: $white;
+$link-decoration: none;
+$link-hover-color: $mwd-orange;
+$link-hover-decoration: underline;
+$zindex-dropdown: 1000;
+$zindex-sticky: 1020;
+$zindex-fixed: 1030;
+$zindex-modal-backdrop: 1040;
+$zindex-modal: 1050;
+$zindex-popover: 1060;
+$zindex-tooltip: 1070;
+
+$nav-tabs-border-color: $mwd-orange;
+$nav-tabs-link-active-color: $mwd-orange;
+$nav-tabs-link-active-border-color: $mwd-orange;
+
+//input & labels
+$form-group-margin-bottom: 0;
+$input-color: $grey-700;
+$input-border-color: $grey-300;

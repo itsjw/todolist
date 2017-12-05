@@ -1,0 +1,63 @@
+<div class="content container-fluid animated">
+
+    <div class="row pb-2">
+        <div class="col-12">Beheer categoriën</div>
+    </div>
+    <form id="languageForm" action="{{ formUrl }}">
+        <div class="row pb-2">
+            <div class="col-2 pl-0">{{ form_widget(form.category) }}</div>
+            <div class="col-3">{{ form_widget(form.name) }}</div>
+            <div class="col-3">
+
+                <div class='input-group date datetimepicker'>
+                    {{ form_widget(form.deadline) }}
+                    <span class="input-group-addon">
+            <span class="fa fa-calendar"></span>
+            </span>
+                </div>
+
+            </div>
+
+            <div class="col-1">{{ form_widget(form.status) }}</div>
+
+            <div class="col-1">
+                <button type="button" class="btn btn-outline-primary" data-toggle="modal"
+                        data-target="#removeTodoModal">
+                    <i class="fa fa-trash"></i>
+                </button>
+            </div>
+            <div class="row pb-2">
+                <div class="col-1">{{ form_widget(form.submit) }}</div>
+            </div>
+
+            <div class="invisible">{{ form_rest(form) }}</div>
+        </div>
+    </form>
+
+</div>
+
+
+<!-- Modal -->
+<div class="modal" id="removeTodoModal" tabindex="-1" role="dialog"
+     aria-labelledby="removeTodoModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="removeTodoModalLabel">Verwijderen todo</h5>
+            </div>
+            <div class="modal-body">
+                Todo permanent verwijderen ?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Nee</button>
+                <button id="removeTodo"
+                        data-category=" {{ form.vars.value.category.id }}"
+                        data-id=" {{ form.vars.value.id }}"
+                        type="button"
+                        class="btn btn-primary">Ja
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

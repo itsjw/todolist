@@ -1,0 +1,46 @@
+{% set mySubCollectionId = 'category' %}
+{% set mySubCollectionName = '__name2__' %}
+{% set subCollectionForm = collection.todos %}
+
+<div class="collection {{ mySubCollectionId }}"
+     data-collection-id="{{ mySubCollectionId }}"
+     data-collection-name="{{ mySubCollectionName }}"
+     data-prototype="{% filter escape %}
+                 {{ include('@App/todolist/todos.html.twig', {
+         'collection': subCollectionForm.vars.prototype,
+         'categoryId': '',
+         'categoryName': ''
+     }) }}
+             {% endfilter %}">
+
+    {% if index == 1 %}
+        <div class="row pb-1">nieuwe todo</div>
+        <div class="append-{{ mySubCollectionId }}"></div>
+        <div class="row pb-1">
+            <div class="col-1 add-{{ mySubCollectionId }} add-collection-item"
+                 data-collection-id="{{ mySubCollectionId }}">
+                <button type="button" class="btn btn-outline-primary">
+                    <i class="fa fa-plus"></i>
+                </button>
+            </div>
+            <div class="col-1">
+                <button type="submit" class="btn btn-outline-primary category-save-button">
+                    <i class="fa fa-save"></i>
+                </button>
+            </div>
+            <div class="col-2"></div>
+        </div>
+    {% endif %}
+
+    <div class="row pb-1">{{ categoryName }}</div>
+
+    {% for collectionId in subCollectionForm %}
+        {{ include('@App/todolist/todos.html.twig', {
+            'collection': collectionId,
+            'categoryId': categoryId,
+            'categoryName': categoryName
+        }) }}
+    {% endfor %}
+
+
+</div>

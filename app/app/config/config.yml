@@ -30,7 +30,7 @@ twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
     date:
-        format: d-m-Y, H:i:s
+        format: d-m-Y H:i
         interval_format: '%%d days'
         timezone: Europe/Amsterdam
     form_themes:

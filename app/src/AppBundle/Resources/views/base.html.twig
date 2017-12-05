@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="nl">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>{% block title %}todolist{% endblock %}</title>
+    <link rel="stylesheet" href="{{ asset('build/fonts.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/bootstrap-vars.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/bootstrap-core.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/styles.css') }}">
+
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+
+</head>
+
+<body>
+
+<div id="body_content">
+
+    <div id="menu"></div>
+    <div id="content"></div>
+
+    <script src="{{ asset('build/vendor.js') }}"></script>
+    <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+    <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+    <script src="{{ asset('build/app.js') }}"></script>
+
+</div>
+
+</body>
+
+</html>

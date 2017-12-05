@@ -1,0 +1,46 @@
+<div class="content container-fluid animated">
+
+    <div class="row pb-2">
+        <div class="col-12">Beheer categoriën</div>
+    </div>
+
+    <form id="todolistForm" action="{{ url('content_todolist_categories') }}">
+
+        {% set myCollectionId = 'categories' %}
+        {% set myCollectionName = '__name__' %}
+        {% set collectionForm = form.categories %}
+
+        <div class="collection {{ myCollectionId }}"
+             data-collection-id="{{ myCollectionId }}"
+             data-collection-name="{{ myCollectionName }}"
+             data-prototype="{% filter escape %}
+                 {{ include('@App/todolist/categoryNames.html.twig', {
+                 'collection': collectionForm.vars.prototype
+             }) }}
+             {% endfilter %}">
+            {% for collectionId in collectionForm %}
+                {{ include('@App/todolist/categoryNames.html.twig', {
+                    'collection': collectionId
+                }) }}
+            {% endfor %}
+
+            <div class="append-{{ myCollectionId }}"></div>
+
+            <div class="row pb-1">
+                <div class="col-1 add-{{ myCollectionId }} add-collection-item"
+                     data-collection-id="{{ myCollectionId }}">
+                    <button type="button" class="btn btn-outline-primary">
+                        <i class="fa fa-plus"></i>
+                    </button>
+                </div>
+                <div class="col-2"></div>
+                <div class="col-1">{{ form_widget(form.submit) }}</div>
+            </div>
+
+        </div>
+
+        <div class="invisible">{{ form_rest(form) }}</div>
+
+    </form>
+
+</div>

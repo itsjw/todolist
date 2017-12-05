@@ -1,21 +1,35 @@
-<?php
-
-namespace AppBundle\Controller;
+<?php namespace AppBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller
 {
+
     /**
-     * @Route("/", name="homepage")
+     * @Route("/", name="index")
+     *
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
-    public function indexAction(Request $request)
+    public function indexAction()
     {
-        return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-        ]);
+        return $this->redirectToRoute(
+            'base_todolist_category',
+            array('tab' => 'overview', 'category' => null)
+        );
     }
+
+    /**
+     * @Route("/todolist", name="todolist_index")
+     *
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
+    public function todolistIndexAction()
+    {
+        return $this->redirectToRoute(
+            'base_todolist_category',
+            array('tab' => 'overview', 'category' => null)
+        );
+    }
+
 }

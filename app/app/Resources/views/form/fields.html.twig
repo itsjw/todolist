@@ -1,0 +1,19 @@
+{%- block button_widget -%}
+    {% if label and label is empty -%}
+        {%- if label_format is not empty -%}
+            {% set label = label_format|replace({
+            '%name%': name,
+            '%id%': id,
+            }) %}
+        {%- else -%}
+            {% set label = name|humanize %}
+        {%- endif -%}
+    {%- endif -%}
+    {% set iconHtml = '' %}
+    {% if icon|default %}
+        {% set iconHtml = icon %}
+    {% endif %}
+    <button type="{{ type|default('button') }}" {{ block('button_attributes') }}>
+        {{ iconHtml|raw }}{{ label|trans({}, translation_domain) }}
+    </button>
+{%- endblock button_widget -%}

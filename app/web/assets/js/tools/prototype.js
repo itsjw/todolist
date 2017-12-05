@@ -142,7 +142,7 @@ function prototype() {
 
         $collectionHolder.find('.append-' + collectionId).append($newForm);
 
-        $newForm.slideDown('slow');
+        $newForm.slideDown('fast');
 
         setIndex();
 
@@ -176,7 +176,7 @@ function prototype() {
                 }
             });
         } else {
-            $thisItem.slideUp('slow', function () {
+            $thisItem.slideUp('fast', function () {
                 $(this).remove();
                 setIndex();
             });
@@ -222,7 +222,7 @@ function prototype() {
 //
 //     var defer = $.Deferred();
 //
-//         $item.slideUp('slow', function () {
+//         $item.slideUp('fast', function () {
 //             $(this).remove();
 //             defer.resolve("true");
 //         });

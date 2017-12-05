@@ -2,6 +2,8 @@
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 /**
  * @ORM\Entity
@@ -49,9 +51,25 @@ class TodoEntity
     /**
      * @var boolean
      *
-     * @ORM\Column(name="status", type="boolean", length=1)
+     * @ORM\Column(name="status", type="boolean", length=1, nullable=true)
      */
     private $status;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->deadline = new \DateTime();
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return (string)$this->id;
+    }
 
     /**
      * @return integer
@@ -114,11 +132,16 @@ class TodoEntity
     }
 
     /**
-     * @return \DateTime
+     * @return string|null
      */
     public function getDeadline()
     {
-        return $this->deadline;
+        $serializer = new Serializer(array(new DateTimeNormalizer('d-m-Y H:i')));
+        $dateAsString = $serializer->normalize(
+            $this->deadline
+        );
+
+        return $dateAsString;
     }
 
     /**
@@ -136,6 +159,5 @@ class TodoEntity
     {
         $this->status = $status;
     }
-
 
 }
