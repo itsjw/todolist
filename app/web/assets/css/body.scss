@@ -1,24 +1,23 @@
 @import "./bsvars";
 @import "~bootstrap/scss/bootstrap.scss";
-
-$bs-datetimepicker-border-radius: $border-radius !default;
-$screen-sm-min: map-get($grid-breakpoints, sm) !default;
-$screen-md-min: map-get($grid-breakpoints, md) !default;
-$screen-lg-min: map-get($grid-breakpoints, lg) !default;
-
+//
+//$bs-datetimepicker-border-radius: $border-radius !default;
+//$screen-sm-min: map-get($grid-breakpoints, sm) !default;
+//$screen-md-min: map-get($grid-breakpoints, md) !default;
+//$screen-lg-min: map-get($grid-breakpoints, lg) !default;
 @import "~bootstrap4-datetimepicker/src/sass/bootstrap-datetimepicker-build";
-
-.bootstrap-datetimepicker-widget {
-  table.table-condensed {
-    @extend .table;
-    @extend .table-sm;
-    @extend .mb-0;
-
-    th, td {
-      @extend .border-0;
-    }
-  }
-}
+//
+//.bootstrap-datetimepicker-widget {
+//  table.table-condensed {
+//    @extend .table;
+//    @extend .table-sm;
+//    @extend .mb-0;
+//
+//    th, td {
+//      @extend .border-0;
+//    }
+//  }
+//}
 
 body {
   padding: 0;
@@ -48,6 +47,7 @@ input[type="checkbox"] {
   display: flex;
   align-items: center;
   width: auto;
+  margin-top: 0.3em;
 }
 
 button, .btn-outline-primary {
@@ -68,54 +68,10 @@ label {
   font-style: italic;
 }
 
-.button {
-  height: 30px;
-  i {
-    border-radius: 50%;
-    border: 2px solid #ffffff;
-    animation-duration: 0.6s;
-    animation-fill-mode: both;
-    transition: all 0.4s ease-in-out;
-    height: 30px;
-    width: 30px;
-    line-height: 26px;
-    &.fa {
-      line-height: 28px;
-    }
-    &.submit {
-      padding-left: 3px;
-    }
-  }
-  p {
-    float: left;
-    height: 30px;
-    line-height: 26px;
-    padding: 0 0 0 5px;
-  }
-  &:hover {
-    i {
-      border-color: $mwd-orange;
-      transform: rotate(360deg);
-    }
-    p {
-      color: $mwd-orange;
-    }
-  }
-  &.active {
-    i {
-      border-color: $mwd-orange;
-    }
-    p {
-      color: $mwd-orange;
-    }
-  }
-}
-
 #nav_sm {
   margin: 0 0 30px 0;
   padding: 20px 0 0 100px;
   background: #000000;
-  //border-bottom: 1px solid $grey-200;
   z-index: $zindex-sticky;
 }
 
@@ -129,28 +85,9 @@ label {
   right: 0;
   top: 50px;
   bottom: 0;
-  //background: #eeeeee;
-  //overflow: auto;
-  //border-top: $border-width solid $mwd-orange;
-
   .content {
-    //position: absolute;
-    padding: 40px 20px 70px 60px;
-    //background: #eeeeee;
-
-    .sticky {
-      position: fixed;
-      bottom: 74px;
-      left: -5px;
-      width: auto;
-      z-index: $zindex-fixed;
-    }
-
-    &.active {
-
-    }
+    padding: 20px 20px 70px 60px;
   }
-
 }
 
 .nav-item {
@@ -171,7 +108,7 @@ label {
 
 .parsley-errors-list {
   position: absolute;
-  top: 1.7rem;
+  top: 0.3rem;
   right: 1.7rem;
   margin: 0;
   padding: 0;
@@ -185,9 +122,32 @@ label {
   opacity: 1;
 }
 
-.invisible { height: 0; overflow: hidden; }
-.strikethrough { text-decoration: line-through; }
+.invisible {
+  height: 0;
+  overflow: hidden;
+}
 
-.none { display: none; }
+.strikethrough {
+  text-decoration: line-through;
+  color: $grey-500
+}
 
-.modal-dialog { color: #000000; }
+;
+.red {
+  color: $red;
+}
+
+.none {
+  display: none;
+}
+
+.modal-dialog {
+  color: #000000;
+}
+
+.bootstrap-datetimepicker-widget {
+  color: #656565;
+  .fa {
+    color: #656565;
+  }
+}

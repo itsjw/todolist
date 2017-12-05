@@ -108,7 +108,7 @@ function setContent(ajaxContentUrl) {
 
             $('.btn.url').on('click', function () {
                 let url = $(this).attr('data-url');
-                setRoute(url, 'click');
+                setRoute(url, 'init');
             });
 
             $form.parsley();

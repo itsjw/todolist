@@ -29,12 +29,14 @@ function getMenuRoute(url) {
         menuRoutePath = menuRoutePath + '/' + routeParams.page;
     }
     if (routeParams.id) {
-        menuRoutePath = menuRoutePath + routeParams.id;
+        menuRoutePath = menuRoutePath + '/' + routeParams.id;
     }
 
     let menuName = menuRoutePath.replace(/\//g, '-');
 
     let menuRoute = menuRoutePath;
+
+    console.log(menuRoute, menuName);
 
     $('.menu').removeClass('active');
     $('.menu[data-menu="' + menuName + '"]').addClass('active');
@@ -58,7 +60,11 @@ function getRouteUrls(url) {
 
         todolist: {
 
-            menu: Routing.generate('menu_todolist'),
+            menu: Routing.generate('menu_todolist', {
+                slug1: routeParams.tab,
+                slug2: routeParams.page,
+                slug3: routeParams.id
+            }),
 
             //todolist/{tab}/{category}
             base_todolist_category: Routing.generate('base_todolist_category', {

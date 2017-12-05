@@ -3,6 +3,22 @@ const prototype = require('./tools/prototype');
 require('moment');
 require('bootstrap4-datetimepicker');
 
+const dtOptions = {
+    format: 'DD-MM-YYYY HH:mm',
+    useCurrent: false,
+    defaultDate: false,
+    icons: {
+        up: "fa fa-chevron-circle-up",
+        down: "fa fa-chevron-circle-down",
+        next: 'fa fa-chevron-circle-right',
+        previous: 'fa fa-chevron-circle-left',
+        time: 'fa fa-clock-o',
+        date: 'fa fa-calendar',
+        today: 'fa fa-eye',
+        clear: 'fa fa-trash-o',
+        close: 'fa fa-close'
+    }
+}
 
 function loadForm($form) {
 
@@ -11,9 +27,7 @@ function loadForm($form) {
     $form.find('.datetimepicker').each(function () {
 
         let $this = $(this);
-        $this.datetimepicker({
-                                 format: 'DD-MM-YYYY hh:mm'
-                             });
+        $this.datetimepicker(dtOptions);
 
         $this.find('input').click(function () {
             $this.data("DateTimePicker").show();
@@ -65,9 +79,7 @@ function loadForm($form) {
                 $form.find('.datetimepicker').each(function () {
 
                     let $this = $(this);
-                    $this.datetimepicker({
-                                             format: 'DD-MM-YYYY hh:mm'
-                                         });
+                    $this.datetimepicker(dtOptions);
 
                     $this.find('input').click(function () {
                         $this.data("DateTimePicker").show();

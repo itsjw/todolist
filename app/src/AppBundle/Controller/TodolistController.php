@@ -62,7 +62,7 @@ class TodolistController extends Controller
      *
      * @return Response
      */
-    public function contentTodolistOverviewAction(Request $request, $tab, $category)
+    public function contentTodolistCategoryAction(Request $request, $tab, $category)
     {
 
         if (!$request->isXmlHttpRequest()) {
@@ -113,9 +113,8 @@ class TodolistController extends Controller
             /** @var TodoEntity $todoEntity */
             foreach ($categoryE->getTodos() as $todo) {
 
-
                 $serializer = new Serializer(array(new DateTimeNormalizer()));
-                if (!$todo->getDeadline() instanceof \DateTime) {
+                if ($todo->getDeadline() && !$todo->getDeadline() instanceof \DateTime) {
                     $deadline = $serializer->denormalize($todo->getDeadline(), \DateTime::class);
                     $todo->setDeadline($deadline);
                 }
@@ -206,7 +205,7 @@ class TodolistController extends Controller
         }
 
         $serializer = new Serializer(array(new DateTimeNormalizer()));
-        if (!$todoEntity->getDeadline() instanceof \DateTime) {
+        if ($todoEntity->getDeadline() && !$todoEntity->getDeadline() instanceof \DateTime) {
             $deadline = $serializer->denormalize($todoEntity->getDeadline(), \DateTime::class);
             $todoEntity->setDeadline($deadline);
         }

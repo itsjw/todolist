@@ -6,18 +6,17 @@
      data-collection-id="{{ mySubCollectionId }}"
      data-collection-name="{{ mySubCollectionName }}"
      data-prototype="{% filter escape %}
-                 {{ include('@App/todolist/todos.html.twig', {
+     {{ include('@App/todolist/todos.html.twig', {
          'collection': subCollectionForm.vars.prototype,
          'categoryId': '',
          'categoryName': ''
      }) }}
-             {% endfilter %}">
+     {% endfilter %}">
 
     {% if index == 1 %}
-        <div class="row pb-1">nieuwe todo</div>
         <div class="append-{{ mySubCollectionId }}"></div>
-        <div class="row pb-1">
-            <div class="col-1 add-{{ mySubCollectionId }} add-collection-item"
+        <div class="d-flex pb-1">
+            <div class="col-7 add-{{ mySubCollectionId }} add-collection-item"
                  data-collection-id="{{ mySubCollectionId }}">
                 <button type="button" class="btn btn-outline-primary">
                     <i class="fa fa-plus"></i>
@@ -32,7 +31,12 @@
         </div>
     {% endif %}
 
-    <div class="row pb-1">{{ categoryName }}</div>
+    <div class="row pb-2 pt-2 pl-2 mt-2 mb-2 bg-info rounded">Todo's {{ categoryName }}</div>
+    <div class="d-flex border border-top-0 border-left-0 border-right-0 mb-2 pb-2">
+        <div class="col-3">Todo</div>
+        <div class="col-2">Deadline</div>
+        <div class="col-1">Gedaan</div>
+    </div>
 
     {% for collectionId in subCollectionForm %}
         {{ include('@App/todolist/todos.html.twig', {

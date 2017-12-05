@@ -56,14 +56,6 @@ class TodoEntity
     private $status;
 
     /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->deadline = new \DateTime();
-    }
-
-    /**
      * @return string
      */
     public function __toString()

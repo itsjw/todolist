@@ -13,16 +13,18 @@
 
         {% if values.status %}
             {% set done = 'strikethrough' %}
+        {% elseif values.deadline and date(values.deadline) < date() %}
+            {% set done = 'red' %}
         {% endif %}
 
-        <div class="col-2 pl-0 {{ done }}">{{ values.category.name }}</div>
-        <div class="col-2 pl-0 {{ done }}">{{ values.name }}</div>
-        <div class="col-1 pl-0 {{ done }}">{{ values.deadline|format('d-m-Y H:i') }}</div>
+        <div class="col-3 {{ done }}">{{ values.name }}</div>
+        <div class="col-2 {{ done }}">{{ values.deadline|format('d-m-Y H:i') }}</div>
         <div class="col-1">{{ form_widget(collection.status) }}</div>
         <div class="col-1">
             <button type="button"
                     class="btn url btn-outline-primary"
-                    data-url="{{ url('base_todolist_edit', {'category': categoryId, 'id': values.id}) }}">
+                    data-url="{{ url('base_todolist_edit', {'category': categoryId, 'id': values.id}) }}"
+            >
                 <i class="fa fa-edit"></i>
             </button>
         </div>
@@ -30,15 +32,14 @@
     {% else %}
 
         <div class="col-2 pl-0">{{ form_widget(collection.category) }}</div>
-        <div class="col-2">{{ form_widget(collection.name) }}</div>
+        <div class="col-3">{{ form_widget(collection.name) }}</div>
         <div class="col-2">
             <div class='input-group date datetimepicker'>
                 {{ form_widget(collection.deadline) }}
                 <span class="input-group-addon">
-            <span class="fa fa-calendar"></span>
-            </span>
+                    <span class="fa fa-calendar"></span>
+                </span>
             </div>
-
         </div>
         <div class="col-1">
             <button type="button" class="btn btn-outline-primary remove-collection-item">
@@ -49,3 +50,10 @@
     {% endif %}
 
 </div>
+
+
+
+
+
+
+

@@ -7,6 +7,7 @@
        title="overzicht"
        role="tab"><i class="fa fa-list"></i></a>
 
+
     {% for category in categories %}
         {% set id = category.id %}
         {% set name = category.name %}
@@ -22,6 +23,6 @@
        data-url="{{ url('base_todolist_categories') }}"
        href=""
        title="categorieën"
-       role="tab"><i class="fa fa-tags"></i></a>
+       role="tab"><i class="fa fa-bullseye"></i></a>
 
 </nav>

@@ -8,6 +8,6 @@
   "build/fonts/fontawesome-webfont.woff2?v=4.7.0": "/build/fonts/fontawesome-webfont.af7ae505.woff2",
   "build/fonts/fontawesome-webfont.woff?v=4.7.0": "/build/fonts/fontawesome-webfont.fee66e71.woff",
   "build/images/fontawesome-webfont.svg?v=4.7.0": "/build/images/fontawesome-webfont.912ec66d.svg",
-  "build/vendor.js": "/build/vendor.js",
-  "build/styles.css": "/build/styles.css"
+  "build/styles.css": "/build/styles.css",
+  "build/vendor.js": "/build/vendor.js"
 }

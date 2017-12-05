@@ -52,7 +52,7 @@ class TodoEditForm extends AbstractType
                 'required' => false,
             ))
             ->add('submit', SubmitType::class, array(
-                'icon' => '<i class="fa fa-chevron-right"></i>',
+                'icon' => '<i class="fa fa-save"></i>',
                 'label' => false,
                 'attr' => [
                     'class' => 'btn btn-outline-primary',
