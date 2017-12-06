@@ -18,20 +18,20 @@
         <div class="d-flex pb-1">
             <div class="col-7 add-{{ mySubCollectionId }} add-collection-item"
                  data-collection-id="{{ mySubCollectionId }}">
-                <button type="button" class="btn btn-outline-primary">
+                <button type="button" class="btn btn-outline-primary" title="todo toevoegen">
                     <i class="fa fa-plus"></i>
                 </button>
             </div>
             <div class="col-1">
-                <button type="submit" class="btn btn-outline-primary category-save-button">
+                <button type="submit" class="btn btn-outline-primary category-save-button" title="opslaan">
                     <i class="fa fa-save"></i>
                 </button>
             </div>
-            <div class="col-2"></div>
         </div>
     {% endif %}
 
-    <div class="row pb-2 pt-2 pl-2 mt-2 mb-2 bg-info rounded">Todo's {{ categoryName }}</div>
+    <div class="row mb-4"></div>
+    <div class="row pb-2 pt-2 pl-2 mt-2 mb-4 mr-4 bg-info rounded">Todo's {{ categoryName }}</div>
     <div class="d-flex border border-top-0 border-left-0 border-right-0 mb-2 pb-2">
         <div class="col-3">Todo</div>
         <div class="col-2">Deadline</div>

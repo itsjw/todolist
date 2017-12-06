@@ -14,6 +14,7 @@ class CategoryForm extends AbstractType
             ->add('todos', CollectionType::class, [
                 'entry_type' => TodoForm::class,
                 'entry_options' => array(
+                    'label' => false,
                     'formCategory' => $options['formCategory'],
                 ),
                 'allow_add' => true,
@@ -28,7 +29,6 @@ class CategoryForm extends AbstractType
     {
         $resolver->setDefaults(array(
             'data_class' => CategoryEntity::class,
-            'cascade_validation' => true,
             'formCategory' => null,
         ));
     }

@@ -28,7 +28,6 @@ class CategoriesEditForm extends AbstractType
                 'label' => false,
                 'attr' => [
                     'class' => 'btn btn-outline-primary',
-                    'data-toggle' => 'tooltip',
                     'title' => 'opslaan',
                 ]
             ));
@@ -38,7 +37,6 @@ class CategoriesEditForm extends AbstractType
     {
         $resolver->setDefaults(array(
             'data_class' => CategorySuperEntity::class,
-            'cascade_validation' => true,
         ));
     }
 }

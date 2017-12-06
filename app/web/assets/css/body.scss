@@ -1,23 +1,6 @@
 @import "./bsvars";
 @import "~bootstrap/scss/bootstrap.scss";
-//
-//$bs-datetimepicker-border-radius: $border-radius !default;
-//$screen-sm-min: map-get($grid-breakpoints, sm) !default;
-//$screen-md-min: map-get($grid-breakpoints, md) !default;
-//$screen-lg-min: map-get($grid-breakpoints, lg) !default;
 @import "~bootstrap4-datetimepicker/src/sass/bootstrap-datetimepicker-build";
-//
-//.bootstrap-datetimepicker-widget {
-//  table.table-condensed {
-//    @extend .table;
-//    @extend .table-sm;
-//    @extend .mb-0;
-//
-//    th, td {
-//      @extend .border-0;
-//    }
-//  }
-//}
 
 body {
   padding: 0;
@@ -42,6 +25,11 @@ input, textarea, select {
     }
   }
 }
+select {
+  //border:1px solid #cccccc;
+  //vertical-align:top;
+  height: 20px;
+}
 
 input[type="checkbox"] {
   display: flex;
@@ -50,7 +38,7 @@ input[type="checkbox"] {
   margin-top: 0.3em;
 }
 
-button, .btn-outline-primary {
+button, .btn-outline-primary, .btn-outline-secondary {
   outline: none !important;
   box-shadow: none !important;
   padding: 0.3rem 0.75rem;
@@ -58,6 +46,16 @@ button, .btn-outline-primary {
     outline: none !important;
     box-shadow: none !important;
   }
+}
+select.form-control {
+  &:not([size]):not([multiple]) {
+    box-sizing: content-box;
+    height: 0.95rem;
+  }
+}
+
+.input-group {
+  height: 2rem;
 }
 
 label {
@@ -129,10 +127,9 @@ label {
 
 .strikethrough {
   text-decoration: line-through;
-  color: $grey-500
+  color: $grey-500;
 }
 
-;
 .red {
   color: $red;
 }

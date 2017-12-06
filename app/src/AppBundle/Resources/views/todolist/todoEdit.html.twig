@@ -1,22 +1,22 @@
 <div class="content container-fluid animated">
 
-    <div class="row pb-2 pt-2 pl-2 mt-2 mb-2 bg-info rounded">Todo bewerken</div>
+    <div class="row pb-2 pt-2 pl-2 mt-2 mb-4 mr-4 bg-info rounded">Todo bewerken</div>
 
-    <form id="languageForm" action="{{ formUrl }}">
+    <form action="{{ formUrl }}">
 
         <div class="d-flex pb-2">
             <div class="col-1 pl-0">Categorie</div>
-            <div class="col-2 pl-0">{{ form_widget(form.category) }}</div>
+            <div class="col-3 pl-0">{{ form_widget(form.category) }}</div>
         </div>
 
         <div class="d-flex pb-2">
             <div class="col-1 pl-0">Todo</div>
-            <div class="col-2 pl-0">{{ form_widget(form.name) }}</div>
+            <div class="col-3 pl-0">{{ form_widget(form.name) }}</div>
         </div>
 
         <div class="d-flex pb-2">
             <div class="col-1 pl-0">Deadline</div>
-            <div class="col-2 pl-0">
+            <div class="col-3 pl-0">
                 <div class='input-group date datetimepicker'>
                     {{ form_widget(form.deadline) }}
                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
@@ -30,12 +30,14 @@
         </div>
 
         <div class="d-flex pb-2 ">
-            <div class="col-1 pl-0"></div>
-            <div class="col-1 pl-0 ">
-            </div>
+            <div class="col-3 pl-0 "></div>
             <div class="col-2 pl-0">
-                <button type="button" class="btn btn-outline-primary" data-toggle="modal"
-                        data-target="#removeTodoModal">
+                <button type="button"
+                        class="btn btn-outline-primary"
+                        data-toggle="modal"
+                        data-target="#removeTodoModal"
+                        title="todo verwijderen"
+                >
                     <i class="fa fa-trash"></i>
                 </button>
                 {{ form_widget(form.submit) }}

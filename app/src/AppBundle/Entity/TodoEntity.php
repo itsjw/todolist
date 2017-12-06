@@ -56,14 +56,6 @@ class TodoEntity
     private $status;
 
     /**
-     * @return string
-     */
-    public function __toString()
-    {
-        return (string)$this->id;
-    }
-
-    /**
      * @return integer
      */
     public function getId()

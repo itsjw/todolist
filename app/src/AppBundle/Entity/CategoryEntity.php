@@ -27,7 +27,7 @@ class CategoryEntity
 
     /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\TodoEntity", mappedBy="category")
-     * @ORM\OrderBy({"status"="ASC", "deadline"="DESC", "name"="ASC"})
+     * @ORM\OrderBy({"status"="ASC", "deadline"="DESC", "id"="DESC"})
      */
     private $todos;
 

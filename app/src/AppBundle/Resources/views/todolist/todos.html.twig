@@ -1,11 +1,6 @@
 {% set values =  collection.vars.value %}
 
-{% set errorClass = 'new' %}
-{% if values %}
-    {% set errorClass = values.id %}
-{% endif %}
-
-<div class="d-flex pb-1 item {{ mySubCollectionId }}-collection-item error-{{ errorClass }}">
+<div class="d-flex pb-1 item {{ mySubCollectionId }}-collection-item">
 
     {% if values %}
 
@@ -24,6 +19,7 @@
             <button type="button"
                     class="btn url btn-outline-primary"
                     data-url="{{ url('base_todolist_edit', {'category': categoryId, 'id': values.id}) }}"
+                    title="todo bewerken"
             >
                 <i class="fa fa-edit"></i>
             </button>
@@ -31,8 +27,8 @@
 
     {% else %}
 
-        <div class="col-2 pl-0">{{ form_widget(collection.category) }}</div>
-        <div class="col-3">{{ form_widget(collection.name) }}</div>
+        <div class="col-2">{{ form_widget(collection.category) }}</div>
+        <div class="col-3 pl-5">{{ form_widget(collection.name) }}</div>
         <div class="col-2">
             <div class='input-group date datetimepicker'>
                 {{ form_widget(collection.deadline) }}
@@ -42,7 +38,7 @@
             </div>
         </div>
         <div class="col-1">
-            <button type="button" class="btn btn-outline-primary remove-collection-item">
+            <button type="button" class="btn btn-outline-primary remove-collection-item" title="todo verwijderen">
                 <i class="fa fa-minus"></i>
             </button>
         </div>

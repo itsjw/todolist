@@ -57,7 +57,7 @@ class TodolistController extends Controller
      *      requirements={"tab": "overview|category", "category": "\d+"}, defaults={"category"=null})
      *
      * @param Request $request
-     * @param $tab
+     * @param string $tab
      * @param $category
      *
      * @return Response
@@ -66,17 +66,17 @@ class TodolistController extends Controller
     {
 
         if (!$request->isXmlHttpRequest()) {
-            $this->addFlash(
-                'notice',
-                'You can access ' . $request->getRequestUri() . ' only using Ajax'
+            return $this->redirectToRoute(
+                'base_todolist_category',
+                array('tab' => 'overview', 'category' => null)
             );
-            return $this->redirectToRoute('logout');
         }
 
         $em = $this->getDoctrine()->getManager();
 
         $repository = $em->getRepository(CategoryEntity::class);
 
+        //switch overview category
         if ($tab == 'category') {
             $thisCategory = $repository->find($category);
             $categories[] = $thisCategory;
@@ -108,10 +108,11 @@ class TodolistController extends Controller
             return $this->render('@App/todolist/categories.html.twig', $formVars);
         }
 
-        /** @var CategoryEntity $categoryE */
-        foreach ($categoryCollection->getCategories() as $categoryE) {
-            /** @var TodoEntity $todoEntity */
-            foreach ($categoryE->getTodos() as $todo) {
+        /** @var CategoryEntity $_category */
+        foreach ($categoryCollection->getCategories() as $_category) {
+
+            /** @var TodoEntity $todo */
+            foreach ($_category->getTodos() as $todo) {
 
                 $serializer = new Serializer(array(new DateTimeNormalizer()));
                 if ($todo->getDeadline() && !$todo->getDeadline() instanceof \DateTime) {
@@ -121,6 +122,7 @@ class TodolistController extends Controller
 
                 $em->persist($todo);
             }
+
         }
 
         $em->flush();
@@ -161,31 +163,30 @@ class TodolistController extends Controller
     {
 
         if (!$request->isXmlHttpRequest()) {
-            $this->addFlash(
-                'notice',
-                'You can access ' . $request->getRequestUri() . ' only using Ajax'
+            return $this->redirectToRoute(
+                'base_todolist_category',
+                array('tab' => 'overview', 'category' => null)
             );
-            return $this->redirectToRoute('base_todolist_category', array('category' => 1));
         }
 
         $em = $this->getDoctrine()->getManager();
 
         $repository = $em->getRepository(TodoEntity::class);
 
-        $todoEntity = $repository->find($id);
+        $todo = $repository->find($id);
 
-        if (!$todoEntity instanceof TodoEntity) {
+        if (!$todo instanceof TodoEntity) {
             return new JsonResponse(array(
                 'message' => 'Success!',
                 'redirect' => $this->generateUrl(
-                    'base_todolist_edit',
+                    'base_todolist_category',
                     array('tab' => 'category', 'category' => 1),
                     UrlGeneratorInterface::ABSOLUTE_URL
                 )
             ), 200);
         }
 
-        $form = $this->createForm(TodoEditForm::class, $todoEntity);
+        $form = $this->createForm(TodoEditForm::class, $todo);
 
         $form->handleRequest($request);
 
@@ -205,9 +206,9 @@ class TodolistController extends Controller
         }
 
         $serializer = new Serializer(array(new DateTimeNormalizer()));
-        if ($todoEntity->getDeadline() && !$todoEntity->getDeadline() instanceof \DateTime) {
-            $deadline = $serializer->denormalize($todoEntity->getDeadline(), \DateTime::class);
-            $todoEntity->setDeadline($deadline);
+        if ($todo->getDeadline() && !$todo->getDeadline() instanceof \DateTime) {
+            $deadline = $serializer->denormalize($todo->getDeadline(), \DateTime::class);
+            $todo->setDeadline($deadline);
         }
 
         $em->flush();
@@ -215,8 +216,8 @@ class TodolistController extends Controller
         return new JsonResponse(array(
             'message' => 'Success!',
             'redirect' => $this->generateUrl(
-                'base_todolist_edit',
-                array('category' => $category, 'id' => $id),
+                'base_todolist_category',
+                array('tab' => 'category', 'category' => $category),
                 UrlGeneratorInterface::ABSOLUTE_URL
             )
         ), 200);
@@ -226,21 +227,40 @@ class TodolistController extends Controller
      * @Route("/content/todolist/remove/{category}/{id}", options={"expose"=true}, name="content_todolist_remove",
      *      requirements={"category": "\d+", "id": "\d+"})
      *
+     * @param Request $request
      * @param $category
      * @param $id
      *
      * @return Response
      */
-    public function contentTodolistRemoveAction($category, $id)
+    public function contentTodolistRemoveAction(Request $request, $category, $id)
     {
+        if (!$request->isXmlHttpRequest()) {
+            return $this->redirectToRoute(
+                'base_todolist_category',
+                array('tab' => 'overview', 'category' => null)
+            );
+        }
+
         $em = $this->getDoctrine()->getManager();
 
         $repository = $em->getRepository(TodoEntity::class);
 
-        /** @var TodoEntity $todoEntity */
-        $todoEntity = $repository->find($id);
+        /** @var TodoEntity $todo */
+        $todo = $repository->find($id);
 
-        $em->remove($todoEntity);
+        if (!$todo instanceof TodoEntity) {
+            return new JsonResponse(array(
+                'message' => 'Success!',
+                'redirect' => $this->generateUrl(
+                    'base_todolist_edit',
+                    array('tab' => 'category', 'category' => 1),
+                    UrlGeneratorInterface::ABSOLUTE_URL
+                )
+            ), 200);
+        }
+
+        $em->remove($todo);
 
         $em->flush();
 
@@ -251,8 +271,7 @@ class TodolistController extends Controller
                 array('tab' => 'category', 'category' => $category),
                 UrlGeneratorInterface::ABSOLUTE_URL
             ),
-            'redirectMethod' => 'init',
-            'flash' => array('success', 'categories updated')
+            'redirectMethod' => 'init'
         ), 200);
     }
 
@@ -277,11 +296,10 @@ class TodolistController extends Controller
     {
 
         if (!$request->isXmlHttpRequest()) {
-            $this->addFlash(
-                'notice',
-                'You can access ' . $request->getRequestUri() . ' only using Ajax'
+            return $this->redirectToRoute(
+                'base_todolist_category',
+                array('tab' => 'overview', 'category' => null)
             );
-            return $this->redirectToRoute('base_todolist_overview');
         }
 
         $em = $this->getDoctrine()->getManager();
@@ -296,12 +314,15 @@ class TodolistController extends Controller
         $todos = [];
         /** @var CategoryEntity $category */
         foreach ($categoryCollection->getCategories() as $category) {
+
             $originalCategories->add($category);
             $catTodos = $category->getTodos();
+
             /** @var TodoEntity $todo */
             foreach ($catTodos as $todo) {
                 $todos[$category->getName()] = $todo->getName();
             }
+
         }
 
         $form = $this->createForm(CategoriesEditForm::class, $categoryCollection);
@@ -316,39 +337,44 @@ class TodolistController extends Controller
             return $this->render('@App/todolist/categoriesEdit.html.twig', $formVars);
         }
 
-        /** @var CategoryEntity $categoryEntity */
-        foreach ($originalCategories as $categoryEntity) {
-            if ($categoryCollection->getCategories()->contains($categoryEntity) === false) {
-                foreach ($categoryEntity->getTodos() as $todo) {
+        /** @var CategoryEntity $category */
+        foreach ($originalCategories as $category) {
+
+            if ($categoryCollection->getCategories()->contains($category) === false) {
+
+                /** @var TodoEntity $todo */
+                foreach ($category->getTodos() as $todo) {
                     $todo->setCategory(1);
                 }
-                $em->remove($categoryEntity);
+
+                $em->remove($category);
+
             }
         }
 
         $names = [];
-        $errorMessage = '<i class="fa fa-close warning" data-toggle="tooltip" title="Deze categorie bestaat al."></i>';
+        $errorMessage = '<i class="fa fa-close warning" title="Deze categorie bestaat al."></i>';
 
-        /** @var CategoryEntity $categoryEntity */
-        foreach ($categoryCollection->getCategories() as $categoryEntity) {
+        /** @var CategoryEntity $category */
+        foreach ($categoryCollection->getCategories() as $category) {
 
+            //check if category name already exists //if so return error message
             $categoryId = 'new';
-            if ($categoryEntity->getId()) {
-                $categoryId = $categoryEntity->getId();
+            if ($category->getId()) {
+                $categoryId = $category->getId();
             }
-            $names[] = $categoryEntity->getName();
-
+            $names[] = $category->getName();
             if (count($names) != count(array_unique($names))) {
                 return new JsonResponse(array(
                     'message' => 'Success!',
                     'errors' => ['errorId' => $categoryId,
-                        'errorFieldClass' => 'language-name',
+                        'errorFieldClass' => 'category-name',
                         'errorMessage' => $errorMessage
                     ],
                 ), 200);
             }
 
-            $em->persist($categoryEntity);
+            $em->persist($category);
 
         }
 
@@ -361,8 +387,7 @@ class TodolistController extends Controller
                 array(),
                 UrlGeneratorInterface::ABSOLUTE_URL
             ),
-            'redirectMethod' => 'init',
-            'flash' => array('success', 'categories updated')
+            'redirectMethod' => 'init'
         ), 200);
 
     }

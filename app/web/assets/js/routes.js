@@ -36,8 +36,6 @@ function getMenuRoute(url) {
 
     let menuRoute = menuRoutePath;
 
-    console.log(menuRoute, menuName);
-
     $('.menu').removeClass('active');
     $('.menu[data-menu="' + menuName + '"]').addClass('active');
 

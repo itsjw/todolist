@@ -1,11 +1,27 @@
-<div class="row pb-3 item {{ myCollectionId }}-collection-item border-info">
+{% set values =  collection.vars.value %}
+
+{% set errorClass = 'new' %}
+{% if values %}
+    {% set errorClass = values.id %}
+{% endif %}
+
+<div class="row pb-3 item {{ myCollectionId }}-collection-item border-info error-{{ errorClass }}">
 
     <div class="col-3">{{ form_widget(collection.name) }}</div>
 
-    <div class="col-1">
-        <button type="button" class="btn btn-outline-primary remove-collection-item">
-            <i class="fa fa-minus"></i>
-        </button>
-    </div>
+    {% if values and values.id == 1 %}
+        <div class="col-1">
+            <button type="button" class="btn btn-outline-secondary">
+                <i class="fa fa-minus"></i>
+            </button>
+        </div>
+    {% else %}
+        <div class="col-1">
+            <button type="button" class="btn btn-outline-primary remove-collection-item"
+                    title="categorie verwijderen">
+                <i class="fa fa-minus"></i>
+            </button>
+        </div>
+    {% endif %}
 
 </div>

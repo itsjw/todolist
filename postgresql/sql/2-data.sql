@@ -1,0 +1,13 @@
+INSERT INTO categories VALUES (1, 'Werk');
+INSERT INTO categories VALUES (2, 'Prive');
+INSERT INTO todolists VALUES (47, 1, 'dependies, entities', null, true);
+INSERT INTO todolists VALUES (48, 1, 'controllers, routing, formtypes, twigs', null, true);
+INSERT INTO todolists VALUES (49, 1, 'styling, cleanup code', null, true);
+INSERT INTO todolists VALUES (42, 1, 'mailen code challenge todolist', '2017-12-06 17:00:00', false);
+INSERT INTO todolists VALUES (43, 1, 'bellen / mailen nedbase voor results', '2017-12-13 17:00:00', false);
+INSERT INTO todolists VALUES (44, 2, 'dwijlen', null, true);
+INSERT INTO todolists VALUES (41, 2, 'verzekering mailen', '2017-12-01 12:00:00', false);
+INSERT INTO todolists VALUES (40, 2, 'stoffen, stofzuigen', '2017-12-07 12:00:00', false);
+INSERT INTO todolists VALUES (39, 2, 'boodschappen opschrijven', null, false);
+INSERT INTO todolists VALUES (45, 1, 'github first commit', null, true);
+INSERT INTO todolists VALUES (46, 1, 'docker, symfony', null, true);

@@ -10,11 +10,11 @@ class CategoryNamesForm extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $errorKey = '<i class="fa fa-close warning" data-toggle="tooltip" title="Vul de categorie naam in."></i>';
+        $errorKey = '<i class="fa fa-close warning" title="Vul de categorie naam in."></i>';
         $builder
             ->add('name', TextType::class, array(
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control category-name',
                     'placeholder' => 'categorie naam',
                     'data-parsley-error-message' => $errorKey
                 ],
@@ -26,6 +26,7 @@ class CategoryNamesForm extends AbstractType
     {
         $resolver->setDefaults(array(
             'data_class' => CategoryEntity::class,
+            'cascade_validation' => true,
         ));
     }
 }

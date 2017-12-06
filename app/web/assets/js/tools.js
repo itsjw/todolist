@@ -42,7 +42,6 @@ function setRoute(url, method) {
  * @param data.message
  * @param data.redirect
  * @param data.redirectMethod
- * @param data.flash
  * @param data.errors
  * @param data.errors.errorId
  * @param data.errors.errorFieldClass
@@ -67,13 +66,6 @@ function setAjaxSuccesResponse(data) {
     if (data.redirect) {
         let method = data.redirectMethod ? data.redirectMethod : 'click';
         setRoute(data.redirect, method);
-    }
-
-    if (data.flash) {
-        let flashData = data.flash,
-            label     = flashData[0],
-            message   = flashData[1];
-        $body_content.append('<div class="alert alert-' + label + '">' + message + '</div>');
     }
 
 }
@@ -128,7 +120,7 @@ function setContent(ajaxContentUrl) {
                                setAjaxSuccesResponse(data);
                            },
                            error: function (xhr, ajaxOptions, thrownError) {
-                               console.log(xhr.status, thrownError);
+                               // console.log(xhr.status, thrownError);
                            }
                        });
             });

@@ -1,6 +1,6 @@
 <div class="content container-fluid animated">
 
-    <div class="row pb-2 pt-2 pl-2 mt-2 mb-2 bg-info rounded">Beheer todo categorieën</div>
+    <div class="row pb-2 pt-2 pl-2 mt-2 mb-4 mr-4 bg-info rounded">Beheer todo categorieën</div>
 
     <form id="todolistForm" action="{{ url('content_todolist_categories') }}">
 
@@ -27,7 +27,7 @@
             <div class="row pb-1">
                 <div class="col-1 add-{{ myCollectionId }} add-collection-item"
                      data-collection-id="{{ myCollectionId }}">
-                    <button type="button" class="btn btn-outline-primary">
+                    <button type="button" class="btn btn-outline-primary" title="category toevoegen">
                         <i class="fa fa-plus"></i>
                     </button>
                 </div>

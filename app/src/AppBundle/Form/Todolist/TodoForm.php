@@ -17,7 +17,7 @@ class TodoForm extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $errorKey = '<i class="fa fa-close warning" data-toggle="tooltip" title="Vul aub een todo omschrijving in."></i>';
+        $errorKey = '<i class="fa fa-close warning" title="Vul aub een todo omschrijving in."></i>';
 
         $builder
             ->add('category', EntityType::class, array(
@@ -31,7 +31,7 @@ class TodoForm extends AbstractType
             ))
             ->add('name', TextType::class, array(
                 'attr' => [
-                    'class' => 'form-control wbr',
+                    'class' => 'form-control',
                     'placeholder' => 'todo ...',
                     'data-parsley-error-message' => $errorKey,
                     'rows' => 1,
@@ -58,7 +58,6 @@ class TodoForm extends AbstractType
         $resolver->setDefaults(array(
             'data_class' => TodoEntity::class,
             'formCategory' => null,
-            'cascade_validation' => true,
         ));
     }
 }
