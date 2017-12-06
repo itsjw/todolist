@@ -79,6 +79,16 @@ class TodolistController extends Controller
         //switch overview category
         if ($tab == 'category') {
             $thisCategory = $repository->find($category);
+            if (!$thisCategory instanceof CategoryEntity) {
+                return new JsonResponse(array(
+                    'message' => 'Success!',
+                    'redirect' => $this->generateUrl(
+                        'base_todolist_category',
+                        array('tab' => 'category', 'category' => 1),
+                        UrlGeneratorInterface::ABSOLUTE_URL
+                    )
+                ), 200);
+            }
             $categories[] = $thisCategory;
         } else {
             $thisCategory = null;
