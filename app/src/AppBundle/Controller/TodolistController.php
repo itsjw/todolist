@@ -116,6 +116,7 @@ class TodolistController extends Controller
 
                 $serializer = new Serializer(array(new DateTimeNormalizer()));
                 if ($todo->getDeadline() && !$todo->getDeadline() instanceof \DateTime) {
+                    /** @var \DateTime $deadline */
                     $deadline = $serializer->denormalize($todo->getDeadline(), \DateTime::class);
                     $todo->setDeadline($deadline);
                 }
@@ -207,6 +208,7 @@ class TodolistController extends Controller
 
         $serializer = new Serializer(array(new DateTimeNormalizer()));
         if ($todo->getDeadline() && !$todo->getDeadline() instanceof \DateTime) {
+            /** @var \DateTime $deadline */
             $deadline = $serializer->denormalize($todo->getDeadline(), \DateTime::class);
             $todo->setDeadline($deadline);
         }
@@ -253,8 +255,8 @@ class TodolistController extends Controller
             return new JsonResponse(array(
                 'message' => 'Success!',
                 'redirect' => $this->generateUrl(
-                    'base_todolist_edit',
-                    array('tab' => 'category', 'category' => 1),
+                    'base_todolist_category',
+                    array('tab' => 'overview', 'category' => null),
                     UrlGeneratorInterface::ABSOLUTE_URL
                 )
             ), 200);
@@ -308,6 +310,9 @@ class TodolistController extends Controller
 
         $categories = $repository->findAll();
 
+        /** @var CategoryEntity $inital_category */
+        $inital_category = $repository->find(1);
+
         $categoryCollection = new CategorySuperEntity($categories);
 
         $originalCategories = new ArrayCollection();
@@ -344,7 +349,7 @@ class TodolistController extends Controller
 
                 /** @var TodoEntity $todo */
                 foreach ($category->getTodos() as $todo) {
-                    $todo->setCategory(1);
+                    $todo->setCategory($inital_category);
                 }
 
                 $em->remove($category);

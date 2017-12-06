@@ -18,7 +18,7 @@ const dtOptions = {
         clear: 'fa fa-trash-o',
         close: 'fa fa-close'
     }
-}
+};
 
 function loadForm($form) {
 
@@ -47,7 +47,6 @@ function loadForm($form) {
                  $this.prev('label.plh').removeClass('red');
              });
 
-
     });
 
     $('.save-todo-status').on('click', function () {
@@ -59,7 +58,6 @@ function loadForm($form) {
     let $categorySaveButton = $('.category-save-button');
     $categorySaveButton.hide();
     $('.add-collection-item').on('click', function () {
-
 
         $categorySaveButton.hide();
         let checkRemoveButton = setInterval(function () {

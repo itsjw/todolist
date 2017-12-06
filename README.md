@@ -27,11 +27,14 @@ Installed commands for compiling (see package.json):
 - dev@xxx:~$ `yarn run watch`
 - dev@xxx:~$ `yarn run prod` 
 
-**Important**: the first time you run the app do:
-- dev@xxx:~$ `php bin/console cache:clear` >> clear the cache
-- dev@xxx:~$ `yarn run dev` >> install dependencies
+**Important**: the first time you run the app with `docker-compose up` bring it down to avoid db errors.
+So bring it up and then:
 - /todolist$ `docker-compose down` >> bring it down to avoid db errors
-- /todolist$ `docker-compose up` >> bring it up again and you're all set
+- /todolist$ `docker-compose up` >> bring it up again and you should be all set 
+
+After that it's also wise to clear the cache:
+- /todolist$ `docker exec -i -t todolist.php /bin/bash`
+- dev@xxx:~$ `php bin/console cache:clear` >> clear the cache
 
 To see the app running; go to browser url: http://127.0.0.1:8084/
 

@@ -51,6 +51,7 @@ select.form-control {
   &:not([size]):not([multiple]) {
     box-sizing: content-box;
     height: 0.95rem;
+    width: calc(100% - 1.6rem);
   }
 }
 

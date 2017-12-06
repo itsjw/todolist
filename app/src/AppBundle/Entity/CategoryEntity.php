@@ -32,6 +32,14 @@ class CategoryEntity
     private $todos;
 
     /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return (string)$this->id;
+    }
+
+    /**
      * CategoryEntity constructor.
      */
     public function __construct()

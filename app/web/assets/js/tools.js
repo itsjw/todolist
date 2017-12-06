@@ -49,8 +49,7 @@ function setRoute(url, method) {
  */
 function setAjaxSuccesResponse(data) {
 
-    const $body_content = $('#body_content'),
-          $form         = $('form');
+    const $form = $('form');
 
     if (data.errors) {
         let errorId         = data.errors.errorId,
